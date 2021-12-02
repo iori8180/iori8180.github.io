@@ -1,0 +1,128 @@
+<SCRIPT LANGUAGE="JavaScript">
+    function calc1()
+    {
+        var a, b, c;
+        a = eval(document.F.a1.value);
+        b = eval(document.F.b1.value);
+        c = eval(document.F.c1.value);
+        document.F.d1.value = ((a) - (b))/4*(c);
+    }
+
+    function calc2()
+    {
+        var d , e;
+        d = eval(document.F.a2.value);
+        e = eval(document.F.b2.value);
+        document.F.c2.value = d * ((3+4.935*(Math.pow(e,2))));
+    }
+
+    function calc3()
+    {
+        var f , g;
+        f = eval(document.F.a3.value);
+        g = eval(document.F.b3.value);
+        document.F.c3.value = (Math.PI)* ((Math.pow(f,2)) * (Math.pow(g,2)))/4;
+    }
+
+    function calc4()
+    {
+        var h, i, j;
+        h = eval(document.F.a4.value);
+        i = eval(document.F.b4.value);
+        j = eval(document.F.c3.value);
+        document.F.d4.value = (Math.PI)* (h) * ((i) + (j));
+    }
+
+    function calc5()
+    {
+        var k, m, l;
+        k = eval(document.F.a5.value);
+        m = eval(document.F.b5.value);
+        l = eval(document.F.c5.value);
+        document.F.d5.value = k * m / l;
+    }
+
+    function calc6()
+    {
+        var o, p;
+        o = eval(document.F.a6.value);
+        p = eval(document.F.b6.value);
+        document.F.c6.value = o / p;
+    }
+    function calc7()
+    {
+        var as1;
+        as1 = eval(document.F.a7.value);
+        document.F.c7.value = as1 * 10;
+    }
+</SCRIPT>
+
+<FORM name="F">
+
+  <img src="円筒.png" alt="円筒">
+
+  <h2 id="example">円筒</h2>
+  <a href="https://iori8180.github.io/home.html”>ホーム</a><br>
+  </br>
+  <a href="https://iori8180.github.io/index.html" >円柱の計算</a><br>
+  <a>円筒の計算</a><br>
+  <a href="file:///Users/nakataiori/Desktop/卒研/sotuken,kakutyuu.html">角柱の計算</a><br>
+  <a href="file:///Users/nakataiori/Desktop/卒研/sotuken,mugenkakutyuu.html">無限角柱の計算</a><br>
+  <a href="file:///Users/nakataiori/Desktop/卒研/sotuken,gakubuti.html">額縁パッキンの計算</a><br>
+  <br>
+  入力フォーム<br>
+  直径(D)<INPUT name= size=10>mm<BR>
+  内径(D')<INPUT name= size=10>mm<BR>
+  高さ(h)<INPUT name= size=10>mm<BR>
+  静的せん断弾性率(Gs)<INPUT name= size=10>MPa<BR>
+    <h1><font size=3 color="red">※下記「静的せん断弾性率表」を参照・・・</font></h1><br>
+    荷重(W)<INPUT name="a7" size =10>kgf<BR><br/>
+      <INPUT type="button" value=" 計算 " onClick="calc7() ">
+        荷重<INPUT name="c7" size=20>N<BR><br>
+        <br>
+      1kgf ≒ 10N となります.<br>
+    （例：100kgf → 1,000N）<br></br>
+
+[形状率(s)&emsp;((D)-(D'))/4(h)]<br><br/>
+
+(D)<INPUT name="a1" size=20>　(D')<INPUT name="b1" size=20><BR> 4(h)<INPUT name="c1" size=20><BR>
+<BR>
+　<INPUT type="button" value=" 計算 " onClick="calc1() ">
+　形状率<INPUT name="d1" size=20><BR><br>
+
+[みわけの弾性率(MPa)(Eap)&emsp;(Gs)*(3+4.935(s<sup>2</sup>))]<br><br/>
+
+  (Gs)<INPUT name="a2" size=20>　(3+4.935(s<sup>2</sup>))<INPUT name="b2" size=20><BR>
+  <BR>
+  　<INPUT type="button" value=" 計算 " onClick="calc2() ">
+    みわけの弾性率(MPa)(Eap)<INPUT name="c2" size=20><BR><br>
+
+      [受圧面積(mm<sup>2</sup>)(AL)&emsp;π(3.14)((D<sup>2</sup>)-(D'<sup>2</sup>)/4)]<br><br/>
+
+      π(3.14)(D<sup>2</sup>)  <INPUT name="a3" size=20>　 D'<INPUT name="b3" size=20>/4　
+      <BR>
+      　<INPUT type="button" value=" 計算 " onClick="calc3() ">
+      　受圧面積(mm<sup>2</sup>)(AL)<INPUT name="c3" size=20><BR><br>
+
+        [自由面積(mm^2)(AF)&emsp;π(3.14)(h)*((D)+(D'))]<br><br/>
+
+        π(h)<INPUT name="a4" size=20>　(D)<INPUT name="b4" size=20><BR> (D')<INPUT name="c4" size=20><BR>
+        <BR>
+        　<INPUT type="button" value=" 計算 " onClick="calc4() ">
+        　自由面積(mm<sup>2</sup>2)(AF)<INPUT name="d4" size=20><BR><br>
+
+          [バネ定数(N/mm)&ensp;(K)&emsp;(Emp)*(AL)/(h)]<br><br/>
+
+          (Emp)<INPUT name="a5" size=20>　(AL)<INPUT name="b5" size=20> (h)<INPUT name="c5" size=20><BR>
+          <BR>
+          　<INPUT type="button" value=" 計算 " onClick="calc5() ">
+          　バネ定数(N/mm)(K)<INPUT name="d5" size=20><BR><br>
+
+            [たわみ量(mm)&ensp;(x)&emsp;(W)/(K)]<br><br/>
+
+            (W)<INPUT name="a6" size=20>　(K)<INPUT name="b6" size=20><BR>
+            <BR>
+            　<INPUT type="button" value=" 計算 " onClick="calc6() ">
+            　たわみ量(mm)<INPUT name="c6" size=20<BR><br>
+
+</FORM>
